@@ -20,10 +20,10 @@ setInterval(function(){
      }
      var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue('left'));
      var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue('top'));
-     var cTop = -(580-characterTop);
+     var cTop = -(500-characterTop);
      /*cTop>holeTop+130  130 on 150 - character suurus  */
-     if((characterTop<400) ||((blockLeft<20)&&(blockLeft>=50)&&(cTop<holeTop)||(ctop>holetop+130))){
-         alert("Game over. Score: "+counter);
+     if((characterTop>480) || ((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
+         alert("Game over. Score: "+(counter-1));
          character.style.top = 100 + "px";
          counter = 0
      }
@@ -45,4 +45,4 @@ function jump(){
         }
         jumpCount++;
 
-    },10),};
+    },10)};
